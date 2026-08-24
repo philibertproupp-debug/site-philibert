@@ -371,7 +371,7 @@
 
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
   }
 
@@ -397,6 +397,11 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     opacity: 0.65;
+  }
+
+  @media (max-width: 720px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); row-gap: var(--space-m); }
+    .stat-item:nth-child(2n+1) { border-left: none; }
   }
 
   @media (max-width: 480px) {
@@ -967,8 +972,12 @@
         <div class="stat-label">Prestations</div>
       </div>
       <div class="stat-item reveal">
-        <div class="stat-num">20K<span class="unit">+</span></div>
-        <div class="stat-label">Sourires provoqués</div>
+        <div class="stat-num">5<span class="unit">★</span></div>
+        <div class="stat-label">Avis Google</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">1M<span class="unit">+</span></div>
+        <div class="stat-label">Vues réseaux sociaux</div>
       </div>
       <div class="stat-item reveal">
         <div class="stat-num">100<span class="unit">%</span></div>
@@ -989,7 +998,7 @@
         <h2 class="section-heading">Une passion devenue <em>métier</em></h2>
         <hr class="divider">
         <p>Magicien avant tout, je me suis formé à l'hypnose et je pratique aussi le mentalisme et le pickpocket de spectacle. Tout a commencé devant les tours de mon oncle, enfant — depuis, j'ai fait de l'illusion une discipline exigeante, pensée pour créer un instant suspendu, à quelques centimètres de vos regards.</p>
-        <p>Depuis 5 à 10 ans, je conçois des expériences sur mesure pour particuliers et entreprises, où la précision du geste sert une seule idée : l'étonnement sincère.</p>
+        <p>Cela fait bientôt 10 ans que je conçois des expériences sur mesure pour particuliers et entreprises, où la précision du geste sert une seule idée : l'étonnement sincère.</p>
         <a href="mailto:philibertprou.pp@gmail.com?subject=Demande%20de%20devis" class="section-cta">Obtenir votre devis</a>
       </div>
     </div>
@@ -1051,14 +1060,17 @@
       <!--
         GALERIE — comment remplacer par tes vrais fichiers :
         1. Crée un dossier "images" à côté de ce fichier index.html, et mets-y tes photos
-           (ex: images/mariage.jpg, images/seminaire.jpg...) et ta vidéo (ex: images/demo.mp4).
+           (ex: images/mariage.jpg, images/seminaire.jpg...).
         2. Pour chaque <img>, remplace juste la valeur de src="..." par le chemin de ta photo.
-        4. Pour la vidéo, remplace src="images/demo.mp4" par le chemin de ton fichier vidéo
-           (ex: images/demo.mp4), et poster="..." par une image de couverture. Les contrôles
-           de lecture (play, volume, plein écran) s'affichent automatiquement.
-        5. Le texte dans <span> est la légende affichée au survol — modifie-le librement.
-        6. Pour ajouter encore plus de photos, copie-colle un bloc <div class="galerie-item">...</div>
+        3. Le texte dans <span> est la légende affichée au survol — modifie-le librement.
+        4. Pour ajouter encore plus de photos, copie-colle un bloc <div class="galerie-item">...</div>
            entier juste avant la fin de </div> ci-dessous, et change son image et sa légende.
+        5. IMPORTANT : le nom dans src="..." doit correspondre EXACTEMENT au nom du fichier,
+           majuscules/minuscules incluses. En local sur Windows/Mac ça peut fonctionner même
+           si la casse est différente, mais Vercel (Linux) est sensible à la casse : c'est la
+           cause la plus fréquente d'images qui marchent en local mais pas en ligne.
+        Vidéo : retirée pour l'instant (fichier trop lourd / qualité dégradée après compression) —
+        à réintégrer plus tard via un hébergeur vidéo externe (YouTube/Vimeo) plutôt qu'en local.
       -->
       <div class="galerie-grid reveal">
         <div class="galerie-item">
@@ -1072,10 +1084,6 @@
         <div class="galerie-item">
           <img src="image/closeup.jpg" alt="Tour de magie rapprochée" loading="lazy">
           <span>Close-up</span>
-        </div>
-        <div class="galerie-item video-item">
-          <video src="image/demo.mp4" poster="image/demo-cover.jpg" muted loop playsinline controls preload="metadata"></video>
-          <span>Vidéo — démo</span>
         </div>
         <div class="galerie-item">
           <img src="image/soiree-privee.jpg" alt="Prestation lors d'une soirée privée" loading="lazy">
