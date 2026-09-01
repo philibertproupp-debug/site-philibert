@@ -233,7 +233,7 @@
     background:
       linear-gradient(180deg, rgba(11,27,58,0.55) 0%, rgba(11,27,58,0.75) 55%, var(--navy-deep) 100%),
       radial-gradient(ellipse at 50% 20%, rgba(30,58,138,0.55), transparent 60%),
-      url('images/hero-bg.jpg') center 30% / cover no-repeat,
+      url('image/hero-bg.jpg') center 30% / cover no-repeat,
       linear-gradient(180deg, var(--navy-deep) 0%, #0d1f45 55%, var(--navy-deep) 100%);
     overflow: hidden;
   }
@@ -614,17 +614,6 @@
     pointer-events: none;
   }
 
-  .galerie-item span {
-    position: absolute;
-    bottom: 10px; left: 12px;
-    z-index: 1;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    opacity: 0.85;
-    color: var(--cream);
-  }
-
   .galerie-item.video-item {
     grid-column: span 2;
     grid-row: span 2;
@@ -950,7 +939,7 @@
 <main>
 
   <!-- ============ HERO ============ -->
-  <!-- Image de fond de l'accueil : mets ta photo dans images/hero-bg.jpg (grand format, ambiance/portrait large) -->
+  <!-- Image de fond de l'accueil : mets ta photo dans image/hero-bg.jpg (grand format, ambiance/portrait large) -->
   <section class="hero" id="accueil">
     <div class="hero-noise"></div>
     <p class="hero-eyebrow">Magicien&nbsp;·&nbsp;Mentaliste</p>
@@ -989,7 +978,7 @@
   <!-- ============ A PROPOS ============ -->
   <section class="apropos" id="apropos">
     <div class="container apropos-grid">
-      <!-- Mets ta photo dans images/apropos.jpg (portrait ou en situation, format vertical de préférence) -->
+      <!-- Mets ta photo dans image/apropos.jpg (portrait ou en situation, format vertical de préférence) -->
       <div class="apropos-figure reveal">
         <img src="image/apropos.jpg" alt="Philibert en prestation" loading="lazy">
       </div>
@@ -1059,51 +1048,37 @@
       </div>
       <!--
         GALERIE — comment remplacer par tes vrais fichiers :
-        1. Crée un dossier "images" à côté de ce fichier index.html, et mets-y tes photos
-           (ex: images/mariage.jpg, images/seminaire.jpg...).
+        1. Le dossier "image" est à côté de ce fichier index.html, avec tes photos dedans
+           (ex: image/mariage.jpg, image/seminaire.jpg...).
         2. Pour chaque <img>, remplace juste la valeur de src="..." par le chemin de ta photo.
-        3. Le texte dans <span> est la légende affichée au survol — modifie-le librement.
-        4. Pour ajouter encore plus de photos, copie-colle un bloc <div class="galerie-item">...</div>
-           entier juste avant la fin de </div> ci-dessous, et change son image et sa légende.
-        5. IMPORTANT : le nom dans src="..." doit correspondre EXACTEMENT au nom du fichier,
-           majuscules/minuscules incluses. En local sur Windows/Mac ça peut fonctionner même
-           si la casse est différente, mais Vercel (Linux) est sensible à la casse : c'est la
-           cause la plus fréquente d'images qui marchent en local mais pas en ligne.
+        3. Pour ajouter encore plus de photos, copie-colle un bloc <div class="galerie-item">...</div>
+           entier juste avant la fin de </div> ci-dessous, et change son image.
+        4. IMPORTANT : le nom dans src="..." doit correspondre EXACTEMENT au nom du fichier,
+           majuscules/minuscules incluses, sans espace. En local sur Windows/Mac ça peut
+           fonctionner même si la casse est différente, mais Vercel (Linux) est sensible à
+           la casse : c'est la cause la plus fréquente d'image qui marche en local mais pas
+           en ligne.
         Vidéo : retirée pour l'instant (fichier trop lourd / qualité dégradée après compression) —
         à réintégrer plus tard via un hébergeur vidéo externe (YouTube/Vimeo) plutôt qu'en local.
       -->
       <div class="galerie-grid reveal">
         <div class="galerie-item">
           <img src="image/mariage.jpg" alt="Prestation lors d'un mariage" loading="lazy">
-          <span>Mariage — juin</span>
         </div>
         <div class="galerie-item">
           <img src="image/seminaire.jpg" alt="Prestation lors d'un séminaire d'entreprise" loading="lazy">
-          <span>Séminaire</span>
         </div>
         <div class="galerie-item">
           <img src="image/closeup.jpg" alt="Tour de magie rapprochée" loading="lazy">
-          <span>Close-up</span>
-        </div>
-        <div class="galerie-item">
-          <img src="image/soiree-privee.jpg" alt="Prestation lors d'une soirée privée" loading="lazy">
-          <span>Soirée privée</span>
-        </div>
-        <div class="galerie-item">
-          <img src="image/team-building.jpg" alt="Prestation lors d'un team building" loading="lazy">
-          <span>Team building</span>
         </div>
         <div class="galerie-item">
           <img src="image/anniversaire.jpg" alt="Prestation lors d'un anniversaire" loading="lazy">
-          <span>Anniversaire</span>
         </div>
         <div class="galerie-item">
           <img src="image/festival.jpg" alt="Prestation lors d'un festival" loading="lazy">
-          <span>Festival</span>
         </div>
         <div class="galerie-item">
           <img src="image/mentalisme.jpg" alt="Numéro de mentalisme" loading="lazy">
-          <span>Mentalisme</span>
         </div>
       </div>
       <div class="section-cta-center">
@@ -1139,7 +1114,7 @@
       <!--
         ENTREPRISES — pour ajouter un vrai logo (image) à la place d'un nom en texte,
         remplace le <span>Nom</span> correspondant par :
-        <span><img src="images/logo-nom.png" alt="Nom" style="height:28px;width:auto;"></span>
+        <span><img src="image/logo-nom.png" alt="Nom" style="height:28px;width:auto;"></span>
       -->
       <div class="clients-band reveal">
         <span class="clients-label">Ils m'ont fait confiance</span>
